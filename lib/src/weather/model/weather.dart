@@ -1,0 +1,45 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'weather.g.dart';
+
+@JsonSerializable()
+class Weather {
+  const Weather({
+    this.id = 0,
+    this.name = '',
+    this.data = WeatherData.empty,
+  });
+
+  factory Weather.fromJson(Map<String, dynamic> json) =>
+      _$WeatherFromJson(json);
+  Map<String, dynamic> toJson() => _$WeatherToJson(this);
+
+  final int id;
+  final String name;
+  @JsonKey(name: 'main')
+  final WeatherData data;
+}
+
+@JsonSerializable()
+class WeatherData {
+  const WeatherData({
+    this.temp = 0,
+    this.feelsLike = 0,
+    this.min = 0,
+    this.max = 0,
+  });
+
+  factory WeatherData.fromJson(Map<String, dynamic> json) =>
+      _$WeatherDataFromJson(json);
+  Map<String, dynamic> toJson() => _$WeatherDataToJson(this);
+
+  final int temp;
+  @JsonKey(name: 'feels_like')
+  final int feelsLike;
+  @JsonKey(name: 'temp_min')
+  final int min;
+  @JsonKey(name: 'temp_max')
+  final int max;
+
+  static const empty = WeatherData();
+}
