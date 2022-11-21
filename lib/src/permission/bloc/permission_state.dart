@@ -1,4 +1,3 @@
-// ignore_for_file: false
 part of 'permission_bloc.dart';
 
 enum PermissionStatus { none, granted, denied }
