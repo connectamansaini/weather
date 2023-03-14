@@ -5,7 +5,6 @@ import 'package:weather/src/core/domain/endpoints.dart';
 import 'package:weather/src/weather/models/weather.dart';
 
 class WeatherRepository {
-  
   Future<Weather> getWeather({
     required double lat,
     required double lon,

@@ -7,7 +7,9 @@ class Weather {
   const Weather({
     this.id = 0,
     this.name = '',
+    this.dateTime = 0,
     this.data = WeatherData.empty,
+    this.description = const [],
   });
 
   factory Weather.fromJson(Map<String, dynamic> json) =>
@@ -16,8 +18,12 @@ class Weather {
 
   final int id;
   final String name;
+  @JsonKey(name: 'dt')
+  final int dateTime;
   @JsonKey(name: 'main')
   final WeatherData data;
+  @JsonKey(name: 'weather')
+  final List<WeatherDescription> description;
 
   static const empty = Weather();
 }
@@ -44,4 +50,22 @@ class WeatherData {
   final double max;
 
   static const empty = WeatherData();
+}
+
+@JsonSerializable()
+class WeatherDescription {
+  const WeatherDescription({
+    this.weatherTitle = '',
+    this.description = '',
+  });
+
+  factory WeatherDescription.fromJson(Map<String, dynamic> json) =>
+      _$WeatherDescriptionFromJson(json);
+  Map<String, dynamic> toJson() => _$WeatherDescriptionToJson(this);
+
+  @JsonKey(name: 'main')
+  final String weatherTitle;
+  final String description;
+
+  static const empty = WeatherDescription();
 }

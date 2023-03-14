@@ -1,4 +1,6 @@
 // ignore_for_file: false
+import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 
 import 'package:weather/src/location/repository/location_repository.dart';
@@ -32,7 +34,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
         lat: location.latitude,
         lon: location.longitude,
       );
-      
+
       emit(
         state.copyWith(
           status: Status.success,
