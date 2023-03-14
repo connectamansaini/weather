@@ -1,4 +1,3 @@
-// ignore_for_file: false
 import 'package:json_annotation/json_annotation.dart';
 
 part 'weather.g.dart';

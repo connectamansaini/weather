@@ -2,15 +2,12 @@ part of 'permission_bloc.dart';
 
 enum PermissionStatus { none, granted, denied }
 
-class PermissionState extends Equatable {
+class PermissionState {
   const PermissionState({
     this.locationStatus = PermissionStatus.none,
   });
 
   final PermissionStatus locationStatus;
-
-  @override
-  List<Object> get props => [locationStatus];
 
   PermissionState copyWith({
     PermissionStatus? locationStatus,

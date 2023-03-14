@@ -46,7 +46,8 @@ class MyApp extends StatelessWidget {
           ),
         ],
         child: MaterialApp(
-          title: 'Flutter ',
+          title: 'Flutter',
+          debugShowCheckedModeBanner: false,
           theme: AppThemes.lightTheme,
           darkTheme: AppThemes.darkTheme,
           home: const HomeView(),

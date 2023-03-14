@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
 import 'package:weather/src/permission/repository/permission.dart';
 
 part 'permission_event.dart';

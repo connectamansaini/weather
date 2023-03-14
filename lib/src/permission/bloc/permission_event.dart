@@ -1,10 +1,8 @@
 part of 'permission_bloc.dart';
 
-abstract class PermissionEvent extends Equatable {
+abstract class PermissionEvent  {
   const PermissionEvent();
 
-  @override
-  List<Object> get props => [];
 }
 
 class LocationPermissionRequested extends PermissionEvent {}

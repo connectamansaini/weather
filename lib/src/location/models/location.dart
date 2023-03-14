@@ -1,4 +1,3 @@
-// ignore_for_file: false
 class Location {
   Location({
     required this.latitude,
