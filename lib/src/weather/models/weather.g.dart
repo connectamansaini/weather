@@ -15,7 +15,8 @@ Weather _$WeatherFromJson(Map<String, dynamic> json) => Weather(
           : WeatherData.fromJson(json['main'] as Map<String, dynamic>),
       description: (json['weather'] as List<dynamic>?)
               ?.map(
-                  (e) => WeatherDescription.fromJson(e as Map<String, dynamic>))
+                (e) => WeatherDescription.fromJson(e as Map<String, dynamic>),
+              )
               .toList() ??
           const [],
     );

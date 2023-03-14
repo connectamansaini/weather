@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:weather/src/core/domain/constants.dart';
 import 'package:weather/src/core/presentation/colors.dart';
+import 'package:weather/src/core/presentation/constants.dart';
 
 class AppTypography {
   AppTypography._();
