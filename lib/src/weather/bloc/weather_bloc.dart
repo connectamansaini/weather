@@ -15,14 +15,14 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
     this.locationRepository,
     this.weatherRepository,
   ) : super(const WeatherState()) {
-    on<WeatherEvent>(_onWeatherRequested);
+    on<WeatherRequested>(_onWeatherRequested);
   }
 
   final LocationRepository locationRepository;
   final WeatherRepository weatherRepository;
 
   Future<void> _onWeatherRequested(
-    WeatherEvent event,
+    WeatherRequested event,
     Emitter<WeatherState> emit,
   ) async {
     try {
